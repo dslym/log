@@ -1,0 +1,12 @@
+<?php
+header('content-type:image/png');
+//创建背景
+$bg=imagecreatetruecolor(200,50);
+//创建颜色
+$bg_color=imagecolorallocate($bg,150,210,128);
+$txt_color=imagecolorallocate($bg,mt_rand(0,255),mt_rand(0,255),mt_rand(0,255));
+imagefilledrectangle($bg,0,0,200,50,$bg_color);
+$arr=['你是猪吗','这是猴子','天气好好','一气呵成'];
+$v=($arr[mt_rand(0,3)]);
+imagettftext($bg,15,0,10,30,$txt_color,'simsun.ttc',"请输入($v)");
+imagepng($bg);
